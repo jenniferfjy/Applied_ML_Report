@@ -8,20 +8,21 @@ This repository contains code and data for a bike sharing demand forecasting pro
 
 - [Introduction](#introduction)
 - [Data](#data)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
 
 ## Introduction
 
-Describe your project briefly here. Explain what the problem is, why it's important, and how your solution works. Include any relevant background information.
+Bike-sharing systems are gaining popularity in major cities. The process of renting a bike through an app on the users’ smartphone yields lots of information for the provider. Particularly important is the number of bikes rented within a given time period, so that the provider can make proper adjustments to meet the demand. In this project, we analyzed hourly data from Capital Bikeshare in Washington, D.C. over a span of two years and took two distinct approaches to predict future demand. The best regression model HGBT achieved an R2 of 0.8928 on the validation and an RMSLE of 0.4652 on the hidden testing set. The best time series (LSTM-based) model achieved an R2 of 0.9505 and an RMSLE of 0.4540 on the validation and test respectively, which ranks top 27% among all submissions on Kaggle.
 
 ## Data
 
-Explain the dataset you used for this project. If possible, provide a link to the dataset or instructions on how to obtain it. Include information about the data's format, columns, and any preprocessing that was performed.
+The dataset provided by Fanaee-T and Gama (2023) includes Capital Bikeshare’s hourly bike rental data spanning two years with the corresponding weather and seasonal information. The dataset contains two files, train.csv, and test.csv, with 10,887 and 6,493 rows respectively. Both files comprise four categorical variables and eight quantitative variables.
 
-## Getting Started
+## Exploratory Data Analysis
 
-Provide step-by-step instructions on how to set up and run your code. Include any dependencies that need to be installed and any configuration settings that the user should be aware of.
+After parsing datetime, we drew a heatmap to drop highly correlated features. Then, we plotted the distribution of our target total and decided to treat log(total) as our new target as it’s skewed.
+
+We also plotted several boxplots as shown above against the target by different features and found that the key observation are:
+- The peak of the rental time is 8 am and 5 pm to 6 pm during weekdays.
+- More rentals are in fall but fewer in spring.
+- Rentals generally decrease as wind speed and humidity increase.
