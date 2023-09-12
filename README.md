@@ -8,7 +8,9 @@ This repository contains code and data for a bike sharing demand forecasting pro
 
 - [Introduction](#introduction)
 - [Data](#data)
-- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Exploratory Data Analysis](kaggle_bike_sharing_demand_data_exploration.ipynb)
+- [Final Report](Applied_ML_Report.pdf)
+- [Codes](all_models.ipynb)
 
 ## Introduction
 
@@ -26,3 +28,5 @@ We also plotted several boxplots as shown above against the target by different 
 - The peak of the rental time is 8 am and 5 pm to 6 pm during weekdays.
 - More rentals are in fall but fewer in spring.
 - Rentals generally decrease as wind speed and humidity increase.
+
+
